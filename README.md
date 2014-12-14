@@ -6,12 +6,15 @@
 A [TileStrata](https://github.com/naturalatlas/tilestrata) plugin for manipulating and transcoding tile images with [libvips](https://github.com/jcupitt/libvips) via [sharp](https://github.com/lovell/sharp).
 
 ```sh
+$ npm install tilestrata-sharp --save
+```
+
+To install libvips, you can use:
+```sh
 # install libvips on linux
-$ curl -s https://raw.githubusercontent.com/lovell/sharp/master/preinstall.sh | bash -
+curl -s https://raw.githubusercontent.com/lovell/sharp/master/preinstall.sh | bash -
 # install libvips on mac
 brew install homebrew/science/vips --with-webp --with-graphicsmagick
-
-$ npm install tilestrata-sharp --save
 ```
 
 ### Sample Usage
