@@ -1,0 +1,23 @@
+language: cpp
+os:
+  - linux
+env:
+  matrix:
+   - NODE_NVM_VERSION="0.11.14"
+   - NODE_NVM_VERSION="0.10.33"
+before_install:
+  # install libvips
+  - curl -s https://raw.githubusercontent.com/lovell/sharp/master/preinstall.sh | sudo bash -
+  # install node.js
+  - git clone https://github.com/creationix/nvm.git ../.nvm
+  - source ../.nvm/nvm.sh
+  - nvm install $NODE_NVM_VERSION
+  - nvm use $NODE_NVM_VERSION
+  - node --version
+  - npm --version
+script:
+  # dependencies
+  - npm install
+  - npm install tilestrata
+  # execute tests
+  - make test && (make test-ci-coverage || true)
