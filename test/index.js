@@ -28,5 +28,19 @@ describe('Tranform Implementation "sharp"', function() {
 				done();
 			});
 		});
+		it('should not throw when given an invalid buffer', function(done) {
+			var server = new TileServer();
+			var req = TileRequest.parse('/layer/0/0/0/tile.png');
+
+			var inputBuffer = new Buffer('invalid', 'utf8');
+			var inputHeaders = {'Content-Type': 'image/png'};
+			var transform = sharp(function(image, __sharp) { return image; });
+
+			transform.transform(server, req, inputBuffer, inputHeaders, function(err, buffer, headers) {
+				assert.instanceOf(err, Error);
+				assert.match(err.message, /Buffer contains an unsupported image format/);
+				done();
+			});
+		});
 	});
 });
