@@ -22,15 +22,11 @@ brew install homebrew/science/vips --with-webp --with-graphicsmagick
 ```js
 var sharp = require('tilestrata-sharp');
 
-server.registerLayer(function(layer) {
-    layer.setName('mylayer');
-    layer.registerRoute('tile.webp', function(handler) {
-        layer.registerProvider(...);
-        layer.registerTransform(sharp(function(image, sharp) {
-            return image.resize(256).quality(80).webp();
-        }));
-    });
-});
+server.layer('mylayer').route('tile.webp')
+    .use(yourprovider)
+    .use(sharp(function(image, sharp) {
+        return image.resize(256).quality(80).webp();
+    }));
 ```
 
 ## Contributing
