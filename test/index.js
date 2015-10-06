@@ -38,7 +38,7 @@ describe('Tranform Implementation "sharp"', function() {
 
 			transform.transform(server, req, inputBuffer, inputHeaders, function(err, buffer, headers) {
 				assert.instanceOf(err, Error);
-				assert.match(err.message, /Buffer contains an unsupported image format/);
+				assert.match(err.message, /Input buffer contains unsupported image format/);
 				done();
 			});
 		});

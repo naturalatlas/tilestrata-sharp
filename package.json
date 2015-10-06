@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/naturalatlas/tilestrata-sharp",
   "dependencies": {
-    "sharp": "^0.9.3"
+    "sharp": "^0.11.3"
   },
   "devDependencies": {
     "chai": "^1.10.0",
