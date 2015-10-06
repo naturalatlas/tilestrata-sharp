@@ -1,6 +1,6 @@
 {
   "name": "tilestrata-sharp",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A TileStrata plugin for manipulating/transcoding tile images with libvips.",
   "author": "Brian Reavis <brian@thirdroute.com>",
   "license": "Apache-2.0",
