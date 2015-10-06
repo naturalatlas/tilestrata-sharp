@@ -12,7 +12,14 @@ env:
     - NODE_NVM_VERSION="0.10"
     - NODE_NVM_VERSION="0.10"
     - NODE_NVM_VERSION="0.10"
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - g++-4.8
 before_install:
+  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 90
   # install libvips
   - curl -s https://raw.githubusercontent.com/lovell/sharp/master/preinstall.sh | sudo bash -
   # install node.js
