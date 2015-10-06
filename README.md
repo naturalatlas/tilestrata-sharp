@@ -1,7 +1,7 @@
 # tilestrata-sharp
 [![NPM version](http://img.shields.io/npm/v/tilestrata-sharp.svg?style=flat)](https://www.npmjs.org/package/tilestrata-sharp)
-[![Build Status](http://img.shields.io/travis/naturalatlas/tilestrata-sharp/master.svg?style=flat)](https://travis-ci.org/naturalatlas/tilestrata-sharp)
-[![Coverage Status](http://img.shields.io/coveralls/naturalatlas/tilestrata-sharp/master.svg?style=flat)](https://coveralls.io/r/naturalatlas/tilestrata-sharp)
+[![Build Status](https://travis-ci.org/naturalatlas/tilestrata-sharp.svg)](https://travis-ci.org/naturalatlas/tilestrata-sharp)
+[![Coverage Status](http://img.shields.io/codecov/c/github/naturalatlas/tilestrata-sharp/master.svg?style=flat)](https://codecov.io/github/naturalatlas/tilestrata-sharp)
 
 A [TileStrata](https://github.com/naturalatlas/tilestrata) plugin for manipulating and transcoding tile images with [libvips](https://github.com/jcupitt/libvips) via [sharp](https://github.com/lovell/sharp).
 
