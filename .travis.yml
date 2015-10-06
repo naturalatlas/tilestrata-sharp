@@ -3,8 +3,15 @@ os:
   - linux
 env:
   matrix:
-   - NODE_NVM_VERSION="0.11.14"
-   - NODE_NVM_VERSION="0.10.33"
+    - NODE_NVM_VERSION="4.0"
+    - NODE_NVM_VERSION="4.0"
+    - NODE_NVM_VERSION="iojs"
+    - NODE_NVM_VERSION="iojs"
+    - NODE_NVM_VERSION="0.12"
+    - NODE_NVM_VERSION="0.12"
+    - NODE_NVM_VERSION="0.10"
+    - NODE_NVM_VERSION="0.10"
+    - NODE_NVM_VERSION="0.10"
 before_install:
   # install libvips
   - curl -s https://raw.githubusercontent.com/lovell/sharp/master/preinstall.sh | sudo bash -
@@ -19,5 +26,7 @@ script:
   # dependencies
   - npm install
   - npm install tilestrata
+  # for debugging
+  - node -e "console.log(require('sharp').format)"
   # execute tests
   - make test && (make test-ci-coverage || true)
