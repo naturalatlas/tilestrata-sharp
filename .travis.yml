@@ -4,13 +4,8 @@ os:
 env:
   matrix:
     - NODE_NVM_VERSION="4.0"
-    - NODE_NVM_VERSION="4.0"
-    - NODE_NVM_VERSION="iojs"
     - NODE_NVM_VERSION="iojs"
     - NODE_NVM_VERSION="0.12"
-    - NODE_NVM_VERSION="0.12"
-    - NODE_NVM_VERSION="0.10"
-    - NODE_NVM_VERSION="0.10"
     - NODE_NVM_VERSION="0.10"
 addons:
   apt:

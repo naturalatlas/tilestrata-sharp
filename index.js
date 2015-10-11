@@ -2,6 +2,7 @@ var sharp = require('sharp');
 
 module.exports = function(fn) {
 	return {
+		name: 'sharp',
 		transform: function(server, req, buffer, headers, callback) {
 			var image;
 
