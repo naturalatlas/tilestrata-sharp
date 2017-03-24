@@ -28,6 +28,7 @@ script:
   # dependencies
   - npm install
   - npm install tilestrata
+  - npm install sharp
   # for debugging
   - node -e "console.log(require('sharp').format)"
   # execute tests

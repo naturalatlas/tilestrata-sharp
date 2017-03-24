@@ -27,6 +27,7 @@ else
 	rm -rf node_modules
 	npm install
 	npm install tilestrata
+	npm install sharp
 	make test
 	sed -i.bak 's/"version": "[^"]*"/"version": "$(version)"/' package.json
 	rm *.bak
