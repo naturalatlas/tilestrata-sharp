@@ -1,35 +1,15 @@
-language: cpp
-os:
-  - linux
-env:
-  matrix:
-    - NODE_NVM_VERSION="4.0"
-    - NODE_NVM_VERSION="iojs"
-    - NODE_NVM_VERSION="0.12"
-    - NODE_NVM_VERSION="0.10"
-addons:
-  apt:
-    sources:
-    - ubuntu-toolchain-r-test
-    packages:
-    - g++-4.8
+language: node_js
+sudo: false
+node_js:
+    - "6"
+    - "4"
 before_install:
-  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 90
-  # install libvips
-  - curl -s https://raw.githubusercontent.com/lovell/sharp/master/preinstall.sh | sudo bash -
-  # install node.js
-  - git clone https://github.com/creationix/nvm.git ../.nvm
-  - source ../.nvm/nvm.sh
-  - nvm install $NODE_NVM_VERSION
-  - nvm use $NODE_NVM_VERSION
   - node --version
   - npm --version
-script:
-  # dependencies
+install:
   - npm install
   - npm install tilestrata
   - npm install sharp
-  # for debugging
   - node -e "console.log(require('sharp').format)"
-  # execute tests
+script:
   - make test && (make test-ci-coverage || true)
