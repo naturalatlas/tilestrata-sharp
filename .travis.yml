@@ -1,11 +1,22 @@
 language: node_js
 sudo: false
 node_js:
-    - "6"
-    - "4"
+  - "6"
+  - "4"
+os:
+  - linux
+  - osx
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - g++-4.8
+osx_image: xcode8
 before_install:
   - node --version
   - npm --version
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export CXX=g++-4.8; fi
 install:
   - npm install
   - npm install tilestrata
